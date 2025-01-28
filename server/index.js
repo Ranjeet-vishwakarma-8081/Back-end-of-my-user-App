@@ -5,7 +5,6 @@ import mongoose from "mongoose";
 import cors from "cors";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
-import User from "../models/User.js";
 import  {typeDefs} from "./schema.js";
 import  {resolvers} from "./resolvers.js";
 
