@@ -10,7 +10,7 @@ import  {typeDefs} from "./schema.js";
 import  {resolvers} from "./resolvers.js";
 
 dotenv.config();
-
+const PORT = process.env.PORT || 4000;
 // MongoDB connection
 mongoose
   .connect(process.env.MONGO_URI, {
@@ -35,9 +35,7 @@ const server = new ApolloServer({
   app.use(bodyParser.json());
   app.use("/graphql", expressMiddleware(server));
 
-  app.listen(process.env.PORT, () => {
-    console.log(
-      `Server is running at http://localhost:${process.env.PORT}/graphql`
-    );
+  app.listen(PORT, () => {
+    console.log(`Server is running at http://localhost:${PORT}/graphql`);
   });
 })();
