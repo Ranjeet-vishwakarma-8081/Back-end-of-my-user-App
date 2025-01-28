@@ -1,4 +1,6 @@
 // GraphQL resolvers
+import User from "../models/User.js";
+
 export const resolvers = {
   Query: {
     users: async () => await User.find(),
